@@ -17,7 +17,6 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
   }
