@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: const Color(0xff25D366),
       ),
       home: const WhatsAppHome(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

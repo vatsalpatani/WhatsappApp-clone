@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/call_screen.dart';
+import 'package:flutter_app/pages/camera_screen.dart';
+import 'package:flutter_app/pages/chat_screen.dart';
+import 'package:flutter_app/pages/status_screen.dart';
 
 class WhatsAppHome extends StatefulWidget {
   const WhatsAppHome({super.key});
@@ -40,12 +44,32 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
             )
           ],
         ),
+        actions: const [
+          Icon(
+            Icons.search,
+          ),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
+          Icon(
+            Icons.more_vert,
+          ),
+        ],
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          
+        children: const [
+          CameraScreen(),
+          ChatScreen(),
+          StatusScreen(),
+          CallsScreen(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        child: const Icon(
+          Icons.message,
+          color: Colors.white,
+        ),
+        onPressed: () => print("open chats"),
       ),
     );
   }
